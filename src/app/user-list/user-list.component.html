@@ -1,0 +1,36 @@
+<div class="user-list">
+    <button mat-button color="primary" (click)="onAdd()">
+        Add Registration
+    </button>
+    <table class="table table-bordered" style="margin-top: 10px;">
+        <thead>
+            <tr>
+                <th>ROLL NO</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>DOB</th>
+                <th>GENDER</th>
+                <th>EMAIL</th>
+                <th>OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of userLists; let index=index;">
+                <td>{{index+1}}</td>
+                <td>{{list.f_name}}</td>
+                <td>{{list.l_name}}</td>
+                <td>{{list.dob | date: 'dd/MM/yyyy'}}</td>  
+                <td>{{list.gender}}</td>
+                <td>{{list.email}}</td>
+                <td>
+                    <button mat-icon-button color="primary" class="mr-2">
+                        <mat-icon (click)="updateUser(list.id)">create</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn">
+                        <mat-icon (click)="deleteUser(list.id)">delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

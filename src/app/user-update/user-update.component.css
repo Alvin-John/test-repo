@@ -1,0 +1,10 @@
+.registration-container {
+    padding: 15rem;
+}
+.cancel-btn {
+    width: 10%; 
+    margin-right: 10px;
+}
+.submit-btn {
+    width: 15%;
+}
